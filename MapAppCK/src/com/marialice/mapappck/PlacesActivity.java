@@ -107,6 +107,7 @@ public class PlacesActivity extends Activity {
 			if (poi.getCategory().equals("sightseeing")
 					| poi.getCategory().equals("museumsightseeing")
 					| poi.getCategory().equals("shoppingsightseeing")
+					| poi.getCategory().equals("sightseeinghidden")
 					| poi.getCategory().equals("barsightseeing")) {
 				listSightseeing.add(poi.getTitle());
 			}
@@ -138,6 +139,7 @@ public class PlacesActivity extends Activity {
 				listBar.add(poi.getTitle());
 			}
 			if (poi.getCategory().equals("hidden")
+					| poi.getCategory().equals("sightseeinghidden")
 					| poi.getCategory().equals("hiddencafe")) {
 				listHidden.add(poi.getTitle());
 			}

@@ -114,6 +114,8 @@ public class Poi {
 			symbol = R.drawable.poi_bar_cafe_shadow;
 		} else if (category.equals("barsightseeing")) {
 			symbol = R.drawable.poi_bar_sightseeing_shadow;
+		} else if (category.equals("sightseeinghidden")) {
+			symbol = R.drawable.poi_sightseeing_hidden_shadow;
 		} else {
 			symbol = R.drawable.poi_action_bar3;
 		}
@@ -153,6 +155,8 @@ public class Poi {
 			categoryName = "bar, club + café, tea room";
 		} else if (category.equals("barsightseeing")) {
 			categoryName = "bar, club + sightseeing";
+		} else if (category.equals("sightseeinghidden")) {
+			categoryName = "sightseeing + hidden, chill out";	
 		} else {
 			categoryName = "no category";
 		}

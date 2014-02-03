@@ -425,9 +425,6 @@ public class MapActivity extends FragmentActivity implements
 		String text5 = getResources().getString(R.string.actlikealocal_text5);
 		String text6 = getResources().getString(R.string.actlikealocal_text6);
 		String text7 = getResources().getString(R.string.actlikealocal_text7);
-		String text8 = getResources().getString(R.string.actlikealocal_text8);
-		String text9 = getResources().getString(R.string.actlikealocal_text9);
-		String text10 = getResources().getString(R.string.actlikealocal_text10);
 		hintlist.add(text1);
 		hintlist.add(text2);
 		hintlist.add(text3);
@@ -435,9 +432,6 @@ public class MapActivity extends FragmentActivity implements
 		hintlist.add(text5);
 		hintlist.add(text6);
 		hintlist.add(text7);
-		hintlist.add(text8);
-		hintlist.add(text9);
-		hintlist.add(text10);
 
 		// Instantiate an AlertDialog.Builder with its constructor
 		AlertDialog.Builder builder = new AlertDialog.Builder(
@@ -450,7 +444,7 @@ public class MapActivity extends FragmentActivity implements
 			String message = hintlist.get(i);
 			int hintnumber = i + 1;
 			builder.setTitle(R.string.actlikealocal)
-					.setMessage(message + " (Hint " + hintnumber + "/10)")
+					.setMessage(message + " (Hint " + hintnumber + "/7)")
 					.setIcon(R.drawable.action_bulb_blue)
 					.setNeutralButton(R.string.close,
 							new DialogInterface.OnClickListener() {

@@ -174,6 +174,9 @@ public class PlacesDescriptionActivity extends Activity {
 				} else if (poi.getCategory().equals("barsightseeing")) {
 					buttonShowMap
 							.setBackgroundResource(R.drawable.button_show_map_barsightseeing);
+				} else if (poi.getCategory().equals("sightseeinghidden")) {
+					buttonShowMap
+							.setBackgroundResource(R.drawable.button_show_map_sightseeinghidden);
 				} else {
 					buttonShowMap.setBackgroundColor(R.color.grey);
 				}

@@ -1,2 +1,2 @@
-MapAppCK
+MobileCartoAppCK
 ========

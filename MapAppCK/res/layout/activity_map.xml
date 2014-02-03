@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <fragment
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        class="com.google.android.gms.maps.SupportMapFragment" />
+
+    <ImageButton
+        android:id="@+id/zoom_city_center_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/button_map_center"
+        android:contentDescription="@string/hello_world"
+        android:onClick="zoomCityCenter" />
+
+    <ImageButton
+        android:id="@+id/zoom_overview_button"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="11dp"
+        android:layout_marginTop="9dp"
+        android:layout_below="@+id/zoom_city_center_button"
+        android:background="@drawable/button_map_overview"
+        android:contentDescription="@string/hello_world"
+        android:onClick="zoomOverview" />
+
+</RelativeLayout>

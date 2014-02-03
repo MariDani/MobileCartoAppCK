@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/legend_view"
         android:drawableLeft="@drawable/poi_romantic"
-        android:drawablePadding="12dp"
+        android:drawablePadding="17dp"
         android:gravity="center_vertical"
         android:text="@string/legend_romantic" />
 

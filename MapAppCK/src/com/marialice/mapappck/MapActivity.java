@@ -204,13 +204,13 @@ public class MapActivity extends FragmentActivity implements
 	// Zoom to city center button
 	public void zoomCityCenter(View view) {
 		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
-				48.9744094, 14.4746094), 16));
+				48.8107106, 14.3149464), 17));
 	}
 
 	// Zoom to overview button
 	public void zoomOverview(View view) {
 		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
-				48.9799567, 14.4759178), 14));
+				48.8142811, 14.3163144), 14));
 	}
 
 	// Zoom to selected poi from description

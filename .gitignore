@@ -1,3 +1,7 @@
+.metadata/
+.settings/
+.google-play-services_lib/
+
 # built application files
 *.apk
 *.ap_

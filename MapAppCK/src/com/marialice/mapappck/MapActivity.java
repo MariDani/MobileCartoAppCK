@@ -230,45 +230,46 @@ public class MapActivity extends FragmentActivity implements
 	 */
 
 	private void addMarkersToMap() {
-		
+
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_hlediste))
 				.position(new LatLng(48.8104739, 14.3076967)).anchor(0.5f, 1f)
-				.title("Open air auditorium").flat(true).rotation(355)
-				.infoWindowAnchor(0.5f, 0.5f));
+				.title("Ot·ËivÈ hlediötÏ").snippet("Open air auditorium")
+				.flat(true).rotation(355).infoWindowAnchor(0.0f, 0.0f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_kostel))
 				.position(new LatLng(48.8101733, 14.3161319)).anchor(0.5f, 1f)
-				.title("St.Vitus Church").flat(true).rotation(355)
-				.infoWindowAnchor(0.5f, 0.5f));
+				.title("Kostel sv. VÌta").snippet("St.Vitus Church").flat(true)
+				.rotation(355).infoWindowAnchor(0.0f, 0.0f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory.fromResource(R.drawable.ck_most))
 				.position(new LatLng(48.8117769, 14.3157628)).flat(true)
-				.anchor(0.5f, 0.5f).rotation(315).title("Barber's Bridge")
-				.infoWindowAnchor(0.5f, 0.5f));
+				.anchor(0.5f, 0.5f).rotation(315).title("Lazebnick˝ most")
+				.snippet("Barber's Bridge").infoWindowAnchor(0.0f, 0.0f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_most_galerie))
 				.position(new LatLng(48.8125969, 14.3129864))
-				.anchor(0.5f, 0.5f).rotation(350).title("Castle Bridge")
-				.flat(true).infoWindowAnchor(0.5f, 0.5f));
+				.anchor(0.5f, 0.5f).rotation(350).title("Pl·öùov˝ most")
+				.snippet("Castle Bridge").flat(true)
+				.infoWindowAnchor(0.5f, 0.5f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_muzeum))
 				.position(new LatLng(48.8117853, 14.3163892))
-				.anchor(0.5f, 0.5f).rotation(0).flat(true).snippet("Museum")
-				.infoWindowAnchor(0.5f, 0.5f));
+				.anchor(0.5f, 0.5f).rotation(0).flat(true).title("Muzeum")
+				.snippet("Museum").infoWindowAnchor(0.5f, 0.5f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory.fromResource(R.drawable.ck_vez))
 				.flat(true).position(new LatLng(48.8123042, 14.3159189))
-				.anchor(0.5f, 0.5f).rotation(355).title("Castle Tower")
+				.anchor(0.5f, 0.5f).rotation(355).title("Z·meck· vÏû").snippet("Castle Tower")
 				.infoWindowAnchor(0.5f, 0.5f));
 
 		// people on boats
@@ -288,12 +289,12 @@ public class MapActivity extends FragmentActivity implements
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_raftaci)).flat(true)
 				.position(new LatLng(48.8093228, 14.3152989))
-				.anchor(0.5f, 0.75f).rotation(355));
+				.anchor(0.5f, 0.75f).rotation(50));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_vodaci)).flat(true)
-				.position(new LatLng(448.8069317, 14.3148481))
+				.position(new LatLng(48.8069317, 14.3148481))
 				.anchor(0.5f, 0.75f).rotation(10));
 
 		// Hospital poi
@@ -387,23 +388,23 @@ public class MapActivity extends FragmentActivity implements
 		// Bus station
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
-						.fromResource(R.drawable.bus_station)).flat(true)
-				.position(new LatLng(48.8116094, 14.3224528)).rotation(346));
+						.fromResource(R.drawable.bus_station)).flat(true).alpha(0.7f)
+				.position(new LatLng(48.8116094, 14.3224528)).rotation(0));
 		// Train station
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
-						.fromResource(R.drawable.train_station)).flat(true)
-				.position(new LatLng(48.8225433, 14.3169514)).rotation(30));
+						.fromResource(R.drawable.train_station)).flat(true).alpha(0.7f)
+				.position(new LatLng(48.8225433, 14.3169514)).rotation(353));
 	}
 
 	// this is what happens when an info window is clicked
 	@Override
 	public void onInfoWindowClick(Marker marker) {
 		String title = marker.getTitle();
-		if (title.equals("»ern· vÏû") | title.equals("Kl·öter dominik·n˘")
-				| title.equals("Samsonova kaöna")
-				| title.equals("Plaveck˝ bazÈn") | title.equals("Kino")
-				| title.equals("éelezn· panna")) {
+		if (title.equals("Ot·ËivÈ hlediötÏ") | title.equals("Kostel sv. VÌta")
+				| title.equals("Lazebnick˝ most")
+				| title.equals("Pl·öùov˝ most") | title.equals("Muzeum")
+				| title.equals("Z·meck· vÏû")) {
 			// do nothing
 		} else {
 			// start the description with extras in the intent

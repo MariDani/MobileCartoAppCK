@@ -26,10 +26,30 @@
         android:text="@string/legend_hostel" />
 
     <TextView
+        android:id="@+id/legend_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/legend_hostel"
+        android:drawableLeft="@drawable/poi_view"
+        android:drawablePadding="11dp"
+        android:gravity="center_vertical"
+        android:text="@string/legend_view" />
+
+    <TextView
+        android:id="@+id/legend_romantic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/legend_view"
+        android:drawableLeft="@drawable/poi_romantic"
+        android:drawablePadding="12dp"
+        android:gravity="center_vertical"
+        android:text="@string/legend_romantic" />
+
+    <TextView
         android:id="@+id/legend_grocery"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/legend_hungrywindow"
+        android:layout_below="@+id/legend_romantic"
         android:drawableLeft="@drawable/poi_grocery"
         android:drawablePadding="15dp"
         android:gravity="center_vertical"

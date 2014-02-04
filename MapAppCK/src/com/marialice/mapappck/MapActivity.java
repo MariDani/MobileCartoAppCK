@@ -159,7 +159,7 @@ public class MapActivity extends FragmentActivity implements
 		Double lon = getIntent().getDoubleExtra("lon", default_lon);
 		if (lat.equals(default_lat)) {
 			mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
-					default_lat, default_lon), 16));
+					default_lat, default_lon), 15));
 		} else {
 			// in case the coordinates come from the description button
 			zoomFromDescription(lat, lon);
@@ -204,7 +204,7 @@ public class MapActivity extends FragmentActivity implements
 	// Zoom to city center button
 	public void zoomCityCenter(View view) {
 		mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(
-				48.8107106, 14.3149464), 17));
+				48.8107106, 14.3149464), 16));
 	}
 
 	// Zoom to overview button

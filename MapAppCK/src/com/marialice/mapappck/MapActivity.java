@@ -220,56 +220,47 @@ public class MapActivity extends FragmentActivity implements
 	}
 
 	// the method creates static markers, that are added to the map
-
-	/*
-	 * mMap.addMarker(new MarkerOptions() .icon(BitmapDescriptorFactory
-	 * .fromResource(R.drawable.cb_cerna_vez)) .position(new LatLng(48.9754689,
-	 * 14.4761153)).anchor(0.5f, 1f)
-	 * .title("»ern· vÏû").snippet("Black tower").rotation(10)
-	 * .flat(true).infoWindowAnchor(0.0f, 0.0f));
-	 */
-
 	private void addMarkersToMap() {
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_hlediste))
-				.position(new LatLng(48.8104739, 14.3076967)).anchor(0.5f, 1f)
+				.position(new LatLng(48.8104739, 14.3076967)).anchor(0.6f, 0.3f)
 				.title("Ot·ËivÈ hlediötÏ").snippet("Open air auditorium")
-				.flat(true).rotation(355).infoWindowAnchor(0.0f, 0.0f));
+				.flat(true).rotation(355).infoWindowAnchor(0.5f, 0.5f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_kostel))
-				.position(new LatLng(48.8101733, 14.3161319)).anchor(0.5f, 1f)
+				.position(new LatLng(48.8101733, 14.3161319)).anchor(0.5f, 0.7f)
 				.title("Kostel sv. VÌta").snippet("St.Vitus Church").flat(true)
-				.rotation(355).infoWindowAnchor(0.0f, 0.0f));
+				.rotation(355).infoWindowAnchor(0.5f, 0.5f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory.fromResource(R.drawable.ck_most))
 				.position(new LatLng(48.8117769, 14.3157628)).flat(true)
-				.anchor(0.5f, 0.5f).rotation(315).title("Lazebnick˝ most")
-				.snippet("Barber's Bridge").infoWindowAnchor(0.0f, 0.0f));
+				.anchor(0.5f, 0.7f).rotation(315).title("Lazebnick˝ most")
+				.snippet("Barber's Bridge").infoWindowAnchor(0.6f, 0.7f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_most_galerie))
 				.position(new LatLng(48.8125969, 14.3129864))
-				.anchor(0.5f, 0.5f).rotation(350).title("Pl·öùov˝ most")
-				.snippet("Castle Bridge").flat(true)
+				.anchor(0.9f, 0.5f).rotation(350).title("Pl·öùov˝ most")
+				.snippet("Cloak Bridge").flat(true)
 				.infoWindowAnchor(0.5f, 0.5f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory
 						.fromResource(R.drawable.ck_muzeum))
 				.position(new LatLng(48.8117853, 14.3163892))
-				.anchor(0.5f, 0.5f).rotation(0).flat(true).title("Muzeum")
+				.anchor(0.5f, 0.9f).rotation(0).flat(true).title("Muzeum")
 				.snippet("Museum").infoWindowAnchor(0.5f, 0.5f));
 
 		mMap.addMarker(new MarkerOptions()
 				.icon(BitmapDescriptorFactory.fromResource(R.drawable.ck_vez))
 				.flat(true).position(new LatLng(48.8123042, 14.3159189))
-				.anchor(0.5f, 0.5f).rotation(355).title("Z·meck· vÏû").snippet("Castle Tower")
+				.anchor(0.8f, 1f).rotation(355).title("Z·meck· vÏû").snippet("Castle Tower")
 				.infoWindowAnchor(0.5f, 0.5f));
 
 		// people on boats

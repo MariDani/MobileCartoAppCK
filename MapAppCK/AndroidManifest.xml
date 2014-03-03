@@ -43,14 +43,14 @@
             android:label="@string/title_activity_about" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.marialice.mapapp.MapActivity" />
+                android:value="com.marialice.mapappck.MapActivity" />
         </activity>
         <activity
             android:name="com.marialice.mapappck.PlacesDescriptionActivity"
             android:label="@string/title_activity_places_description" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.marialice.mapapp.PlacesActivity" />
+                android:value="com.marialice.mapappck.PlacesActivity" />
         </activity>
         <activity
             android:name="com.marialice.mapappck.DatabaseHelper"
@@ -66,7 +66,7 @@
             android:label="@string/title_activity_places" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.marialice.mapapp.MapActivity" />
+                android:value="com.marialice.mapappck.MapActivity" />
         </activity>
     </application>
 

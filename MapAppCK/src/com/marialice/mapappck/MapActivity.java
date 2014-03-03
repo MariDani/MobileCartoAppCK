@@ -105,8 +105,9 @@ public class MapActivity extends FragmentActivity implements
 		case R.id.goto_actlikelocal:
 			// start the pop up with a random hint
 			Random randomi = new Random();
-			int i = randomi.nextInt((9 - 0) + 1) + 0;
-			// nextInt((max - min) + 1) + min;
+			int max = dbclass.queryHintsFromDatabase(this).size() - 1;
+			int min = 0;
+			int i = randomi.nextInt((max - min) + 1) + min;
 			createPopUp(i);
 			return true;
 		case R.id.goto_legend:
@@ -426,10 +427,11 @@ public class MapActivity extends FragmentActivity implements
 			Hint hint = hintlist.get(i);
 			String message = hint.getHinttext();
 			int hintnumber = i + 1;
+			int hintsize = dbclass.queryHintsFromDatabase(this).size();
 			builder.setTitle(R.string.actlikealocal)
 					.setMessage(
 							Html.fromHtml("<p align='justify'>" + message
-									+ "</p> (Hint " + hintnumber + "/10)"))
+									+ "</p> (Hint " + hintnumber + "/"+ hintsize +")"))
 					.setIcon(R.drawable.action_bulb_blue)
 					.setNeutralButton(R.string.close,
 							new DialogInterface.OnClickListener() {

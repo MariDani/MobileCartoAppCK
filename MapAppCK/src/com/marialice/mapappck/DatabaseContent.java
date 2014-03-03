@@ -29,7 +29,7 @@ public class DatabaseContent extends Activity {
 		}
 		try {
 			db = dbHelper.getDataBase();
-			dbCursor = db.rawQuery("SELECT * FROM ckpois;", null);
+			dbCursor = db.rawQuery("SELECT * FROM pois;", null);
 			dbCursor.moveToFirst();
 
 			int idindex = dbCursor.getColumnIndex("id");

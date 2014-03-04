@@ -397,10 +397,7 @@ public class MapActivity extends FragmentActivity implements
 	@Override
 	public void onInfoWindowClick(Marker marker) {
 		String title = marker.getTitle();
-		if (title.equals("Otáèivé hledištì") | title.equals("Kostel sv. Víta")
-				| title.equals("Lazebnickı most")
-				| title.equals("Plášovı most") | title.equals("Muzeum")
-				| title.equals("Zámecká vì")) {
+		if (marker.isFlat()) {
 			// do nothing
 		} else {
 			// start the description with extras in the intent

@@ -190,36 +190,43 @@ public class MapActivity extends FragmentActivity implements
 		for (int i = 0; i < dbmarkers.size(); i++) {
 			StaticMarker marker = dbmarkers.get(i);
 			String title = marker.getTitle();
-			int icon = getResources().getIdentifier(marker.getIcon(),
-					"drawable", this.getPackageName());
-			if (title.length() > 1) {
+			int icon = getResources().getIdentifier(marker.getIcon(), "drawable", this.getPackageName());
+			if (title.length() > 1){
 				// for markers that should have an info window
-				mMap.addMarker(new MarkerOptions().position(marker.getLatLng())
-						.title(title).snippet(marker.getDescription())
-						.icon(BitmapDescriptorFactory.fromResource(icon))
-						.flat(true).rotation(marker.getRotation()));
+				mMap.addMarker(new MarkerOptions()
+					.position(marker.getLatLng())
+					.title(title)
+					.snippet(marker.getDescription())
+					.icon(BitmapDescriptorFactory.fromResource(
+								icon))
+					.flat(true)
+					.rotation(marker.getRotation())
+					);
 			} else {
 				// for all others, without info window
-				mMap.addMarker(new MarkerOptions().position(marker.getLatLng())
-						.icon(BitmapDescriptorFactory.fromResource(icon))
-						.flat(true).rotation(marker.getRotation()));
+				mMap.addMarker(new MarkerOptions()
+					.position(marker.getLatLng())
+					.icon(BitmapDescriptorFactory.fromResource(
+								icon))
+					.flat(true)
+					.rotation(marker.getRotation())
+					);
 			}
 		}
 
-		// create the markers from database
+		// create the pois from database
 		List<Poi> dbpois = dbclass.queryPoisFromDatabase(this);
 
 		for (int i = 0; i < dbpois.size(); i++) {
 			Poi poi = dbpois.get(i);
-			int icon = getResources().getIdentifier(poi.getIcon(), "drawable",
-					this.getPackageName());
+			int icon = getResources().getIdentifier(poi.getIcon(), "drawable", this.getPackageName());
 			mMap.addMarker(new MarkerOptions()
 					.position(poi.getLatLng())
 					.title(poi.getTitle())
 					.snippet(poi.getCategoryName())
 					.icon(BitmapDescriptorFactory.fromBitmap(drawclass
-							.drawTextToBitmap(getApplicationContext(), icon,
-									poi.getNumber()))));
+							.drawTextToBitmap(getApplicationContext(),
+									icon, poi.getNumber()))));
 		}
 	}
 
@@ -258,7 +265,7 @@ public class MapActivity extends FragmentActivity implements
 
 	// this method creates the pop up info when clicking the bulb icon
 	private int createPopUp(int i) {
-
+		
 		List<Hint> hintlist = dbclass.queryHintsFromDatabase(this);
 
 		// Instantiate an AlertDialog.Builder with its constructor
@@ -273,10 +280,7 @@ public class MapActivity extends FragmentActivity implements
 			String message = hint.getHinttext();
 			int hintnumber = i + 1;
 			builder.setTitle(R.string.actlikealocal)
-					.setMessage(
-							Html.fromHtml("<p align='justify'>" + message
-									+ "</p> (Hint " + hintnumber + "/" + count
-									+ ")"))
+					.setMessage(Html.fromHtml("<p align='justify'>" + message + "</p> (Hint " + hintnumber + "/"+ count +")"))
 					.setIcon(R.drawable.action_bulb_blue)
 					.setNeutralButton(R.string.close,
 							new DialogInterface.OnClickListener() {

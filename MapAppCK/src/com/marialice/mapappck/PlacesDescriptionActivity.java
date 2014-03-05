@@ -6,7 +6,6 @@ package com.marialice.mapappck;
  */
 import java.util.List;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -59,7 +58,6 @@ public class PlacesDescriptionActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 
-	@SuppressLint("ResourceAsColor")
 	public void createDetails() {
 		TextView textViewTitle = (TextView) findViewById(R.id.desc_title);
 		TextView textViewDesc = (TextView) findViewById(R.id.description);
@@ -136,6 +134,7 @@ public class PlacesDescriptionActivity extends Activity {
 			}
 		}
 	}
+
 
 
 	// on click listener

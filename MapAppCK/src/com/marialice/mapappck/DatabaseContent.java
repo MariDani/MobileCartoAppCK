@@ -2,7 +2,7 @@ package com.marialice.mapappck;
 
 /* 
  * this is a class to provide content of the db in a nice, practical format.
- * we can use the poi List to access our data all over the app
+ * we can use the Lists to access our data all over the app
  */
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,6 +38,7 @@ public class DatabaseContent extends Activity {
 			int catindex = dbCursor.getColumnIndex("category");
 			int titleindex = dbCursor.getColumnIndex("title");
 			int descindex = dbCursor.getColumnIndex("description");
+			int iconindex = dbCursor.getColumnIndex("icon");
 			int wifiindex = dbCursor.getColumnIndex("wifi");
 			int terraceindex = dbCursor.getColumnIndex("terrace");
 			int sundaysindex = dbCursor.getColumnIndex("sundays");
@@ -53,6 +54,7 @@ public class DatabaseContent extends Activity {
 				String category = dbCursor.getString(catindex);
 				String title = dbCursor.getString(titleindex);
 				String description = dbCursor.getString(descindex);
+				String icon = dbCursor.getString(iconindex);
 				Boolean wifi = dbCursor.getInt(wifiindex) > 0;
 				Boolean terrace = dbCursor.getInt(terraceindex) > 0;
 				Boolean sundays = dbCursor.getInt(sundaysindex) > 0;
@@ -68,6 +70,7 @@ public class DatabaseContent extends Activity {
 				poi.setCategory(category);
 				poi.setTitle(title);
 				poi.setDescription(description);
+				poi.setIcon(icon);
 				poi.setWifi(wifi);
 				poi.setTerrace(terrace);
 				poi.setSundays(sundays);
@@ -87,7 +90,75 @@ public class DatabaseContent extends Activity {
 		}
 		return dbpois;
 	}
+	
+	public List<StaticMarker> queryMarkersFromDatabase(Context context) {
 
+		SQLiteDatabase db = null;
+		Cursor dbCursor;
+		DatabaseHelper dbHelper = new DatabaseHelper(context);
+
+		List<StaticMarker> dbmarkers = new ArrayList<StaticMarker>();
+
+		try {
+			dbHelper.createDataBase();
+		} catch (IOException ioe) {
+		}
+		try {
+			db = dbHelper.getDataBase();
+			dbCursor = db.rawQuery("SELECT * FROM markers;", null);
+			dbCursor.moveToFirst();
+
+			int idindex = dbCursor.getColumnIndex("id");
+			int latindex = dbCursor.getColumnIndex("lat");
+			int lonindex = dbCursor.getColumnIndex("lon");
+			int titleindex = dbCursor.getColumnIndex("title");
+			int descindex = dbCursor.getColumnIndex("description");
+			int categoryindex = dbCursor.getColumnIndex("category");
+			int iconindex = dbCursor.getColumnIndex("icon");
+			int rotationindex = dbCursor.getColumnIndex("rotation");
+			int anchorindex = dbCursor.getColumnIndex("anchor");
+			int infowinanchorindex = dbCursor.getColumnIndex("infowinanchor");
+			
+
+			while (!dbCursor.isAfterLast()) {
+
+				int id = dbCursor.getInt(idindex);
+				Double lat = dbCursor.getDouble(latindex);
+				Double lon = dbCursor.getDouble(lonindex);
+				String title = dbCursor.getString(titleindex);
+				String description = dbCursor.getString(descindex);
+				String category = dbCursor.getString(categoryindex);
+				String icon = dbCursor.getString(iconindex);
+				int rotation = dbCursor.getInt(rotationindex);
+				String anchor = dbCursor.getString(anchorindex);
+				String infowinanchor = dbCursor.getString(infowinanchorindex);
+
+				StaticMarker marker = new StaticMarker();
+
+				marker.setId(id);
+				marker.setLat(lat);
+				marker.setLon(lon);
+				marker.setTitle(title);
+				marker.setDescription(description);
+				marker.setCategory(category);
+				marker.setIcon(icon);
+				marker.setRotation(rotation);
+				marker.setAnchor(anchor);
+				marker.setInfowinanchor(infowinanchor);
+
+				dbmarkers.add(marker);
+
+				dbCursor.moveToNext();
+
+			}
+		} finally {
+			if (db != null) {
+				dbHelper.close();
+			}
+		}
+		return dbmarkers;
+	}
+	
 	public List<Hint> queryHintsFromDatabase(Context context) {
 
 		SQLiteDatabase db = null;
@@ -130,5 +201,5 @@ public class DatabaseContent extends Activity {
 		}
 		return dbhints;
 	}
-
+	
 }
